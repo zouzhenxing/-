@@ -54,12 +54,9 @@ serialPort.open(function (error) {
     return;
   }
   logger.error('通信串口打开成功');
-  // protocol24.start();
-
   serialPort.on('data', (data) => {
     // 初步解析数据
     const result = util.parseResult(data);
-    console.log(result);
     protocol24.parseData(result);
   });
 

@@ -66,8 +66,8 @@ void loop() {
       resave += szTmp;
       delay(2);
     }
-    
-    if(resave.equals("FF")) {
+    Serial.println(resave);
+    if(resave.equals("FFFF")) {
       cardID = "";
       impulse = 0;
       runstatus = 0;

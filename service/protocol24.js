@@ -1,5 +1,4 @@
 'use strict';
-const cmdqueue = []; // 指令队列
 
 // 解析串口回传数据
 exports.parseData = Promise.coroutine(function* (result) { 
@@ -11,10 +10,12 @@ exports.parseData = Promise.coroutine(function* (result) {
       obj.num = parseInt(obj.count * 1000 / 600); // ml
       obj.name = result.data.slice(28, 34);
       obj.update = util.dateFormat(new Date(), "yyyy-MM-dd hh:mm:ss");
+      console.log(obj);
 
       if(SocketIO) {
         SocketIO.emit("TON_update", obj);
       }
+      serialPort.write(Buffer.from(obj.name + "FF", "hex"));
       break;
     }
     default:
