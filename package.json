@@ -1,0 +1,39 @@
+{
+  "name": "lei",
+  "version": "1.0.0",
+  "description": "this is a node services formwork",
+  "main": "index.js",
+  "scripts": {
+    "test:report": "./node_modules/.bin/mocha",
+    "test": "./node_modules/.bin/mocha --reporter mochawesome",
+    "eslint": "./node_modules/.bin/eslint . --fix",
+    "dep-pro": "export NODE_ENV=production && pm2 start index.js -n adserver --watch --ignore-watch='node_modules **/*.json logs public'",
+    "tinynote": "tinynote -source router/*.js -dist api.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zouzhenxing/lei.git"
+  },
+  "author": "zouzhenxing",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.4.1",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "ffi": "^2.2.0",
+    "ioredis": "^2.3.0",
+    "log4js": "^1.1.0",
+    "node-schedule": "^1.2.4",
+    "request": "^2.81.0",
+    "serve-favicon": "^2.3.0",
+    "socket.io": "^1.4.8",
+    "tinynote": "^1.1.2",
+    "qr-image": "^3.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.9.1",
+    "eslint-config-lei": "0.0.14",
+    "eslint-plugin-promise": "^3.3.0"
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "message": {
+        "notfound" : {"code":1,"msg":"页面没找到!"},
+        "servererr" : {"code":1,"msg":"服务器内部异常!"},
+        "success" : {"code":0,"msg":"操作成功!"},
+        "error" : {"code":1,"msg":"操作失败!"}
+    },
+    "redis": {
+        "host": "127.0.0.1",
+        "port": "6379",
+        "password": "",
+        "db": 0
+    },
+    "port" : 80
+}

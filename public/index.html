@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>智能酒桶中继平台</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <link rel="stylesheet" type="text/css" href="css/site.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    
+    <script src="js/site.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/util.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/ejs.min.js" type="text/javascript" charset="utf-8"></script>    
+    <script src="js/socket.io.min.js"></script>
+    <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body ondragstart="return false" onSelectStart="return false">
+	<div id="message"></div>
+    <div id="content" class="container-fluid">
+		<table class="table table-hover">
+			<thead>
+				<th>桶编号</th>
+				<th>卡号</th>
+				<th>流量(ML)</th>
+				<th>时间</th>
+			</thead>
+			<tbody id="tbdata">
+
+			</tbody>
+		</table>
+    </div>
+</body>
+
+<script type="text/html" id="tpl_mainpanel">
+	<tr>
+		<td><%=data.name%></td>
+		<td><%=data.cardid%></td>
+		<td><%=data.num%></td>
+		<td><%=data.update%></td>
+	</tr>
+</script>
+</html>
